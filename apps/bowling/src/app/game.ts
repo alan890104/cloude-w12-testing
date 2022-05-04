@@ -1,8 +1,11 @@
 // game.ts
 export class Game {
-    roll(pins: number) {}
-  
-    get score() {
-      return 0;
-    }
+  private _score = 0;
+  roll(pins: number) {
+    this._score += pins;
   }
+
+  get score() {
+    return this._score;
+  }
+}
