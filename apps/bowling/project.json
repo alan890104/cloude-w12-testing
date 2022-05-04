@@ -79,11 +79,11 @@
       "outputs": ["coverage/apps/bowling"],
       "options": {
         "jestConfig": "apps/bowling/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "coverage": true,
-      "outputFile": "result.json",
-      "json": true
+        "passWithNoTests": true,
+        "coverage": true,
+        "outputFile": "result.json",
+        "json": true
+      }
     }
   },
   "tags": []
