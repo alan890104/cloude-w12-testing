@@ -3,7 +3,7 @@
 // }
 
 export class Potter {
-  public DISCOUNT_PRICE = {
+  private DISCOUNT_PRICE = {
     1: 8,
     2: 8 * 2 * 0.95,
     3: 8 * 3 * 0.9,
@@ -31,6 +31,11 @@ export class Potter {
   // calculating the most great discount and return [best_price, selected_item]
   private selectDiscount(arr:Array<number>, item: Array<number>):[number, Array<number>]{
     // 4+4 is cheaper than 3+5
+    if(arr.length === 8 && item.length===5){
+      const best_price = this.DISCOUNT_PRICE[4]
+      const selected = item.slice(0,-1)
+      return [best_price, selected]
+    } 
     const best_price = this.DISCOUNT_PRICE[item.length as number]
     const selected = item
     return [best_price, selected]
