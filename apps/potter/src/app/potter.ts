@@ -9,7 +9,7 @@ export class Potter {
     3: 8 * 3 * 0.9,
     4: 8 * 4 * 0.8,
     5: 8 * 5 * 0.75,
-  };
+  } as {[key:number]:number};
 
   // count and return the amount of unique element in arr
   private toUnique(arr: Array<number>):Array<number> {
@@ -28,10 +28,12 @@ export class Potter {
     }
   }
 
-  // calculating the most great discount and return [price, selected_item]
+  // calculating the most great discount and return [best_price, selected_item]
   private selectDiscount(arr:Array<number>, item: Array<number>):[number, Array<number>]{
-    console.log(arr, item)
-    return [0, []]
+    // 4+4 is cheaper than 3+5
+    const best_price = this.DISCOUNT_PRICE[item.length as number]
+    const selected = item
+    return [best_price, selected]
   }
 
   // count the cheapest price by given arr via applying discount
